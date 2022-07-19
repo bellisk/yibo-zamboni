@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        p {
-            display: inline;
-            font-size: 40px;
-            margin-top: 0px;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
+    <script src="luxon.min.js"></script>
     <title>Can Yibo Drive the Zamboni Yet?</title>
 </head>
 <body>
-<h2 id="answer"></h2>
-<p id="days"></p>
-<p id="hours"></p>
-<p id="mins"></p>
-<p id="secs"></p>
-<script src="luxon.min.js"></script>
+<div class="content">
+    <h2 id="question">Can Yibo Drive the Zamboni Yet?</h2>
+    <h1 id="answer">NO!</h1>
+    <div class="explanation">
+        Yibo can drive the Zamboni in <span id="days"></span> days, <span id="hours"></span> hours, <span id="mins"></span> minutes and <span id="secs"></span> seconds.
+    </div>
+</div>
 <script>
     var zamboniTime = new luxon.DateTime.fromObject({ year: 2022, month: 8, day: 5, hour: 0, minute: 0 }, { zone: 'Asia/Shanghai' })
 
@@ -34,11 +30,10 @@
         const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
         // Result is output to the specific element
-        document.getElementById("answer").innerHTML = "NO!"
-        document.getElementById("days").innerHTML = days + "d "
-        document.getElementById("hours").innerHTML = hours + "h "
-        document.getElementById("mins").innerHTML = minutes + "m "
-        document.getElementById("secs").innerHTML = seconds + "s "
+        document.getElementById("days").innerHTML = days
+        document.getElementById("hours").innerHTML = hours
+        document.getElementById("mins").innerHTML = minutes
+        document.getElementById("secs").innerHTML = seconds
 
         // Display the message when countdown is over
         if (timeleft <= 0) {
