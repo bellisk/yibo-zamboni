@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        p {
+            display: inline;
+            font-size: 40px;
+            margin-top: 0px;
+        }
+    </style>
+    <title>Can Yibo Drive the Zamboni Yet?</title>
+</head>
+<body>
+<h2 id="answer"></h2>
+<p id="days"></p>
+<p id="hours"></p>
+<p id="mins"></p>
+<p id="secs"></p>
+<script src="luxon.min.js"></script>
+<script>
+    var zamboniTime = new luxon.DateTime.fromObject({ year: 2022, month: 8, day: 5, hour: 0, minute: 0 }, { zone: 'Asia/Shanghai' })
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+        const now = new luxon.DateTime.local();
+        const timeleft = zamboniTime.diff(now);
+
+        // Calculating the days, hours, minutes and seconds left
+        const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        // Result is output to the specific element
+        document.getElementById("answer").innerHTML = "NO!"
+        document.getElementById("days").innerHTML = days + "d "
+        document.getElementById("hours").innerHTML = hours + "h "
+        document.getElementById("mins").innerHTML = minutes + "m "
+        document.getElementById("secs").innerHTML = seconds + "s "
+
+        // Display the message when countdown is over
+        if (timeleft <= 0) {
+            clearInterval(myfunc);
+            document.getElementById("answer").innerHTML = "YES!"
+            document.getElementById("days").innerHTML = ""
+            document.getElementById("hours").innerHTML = ""
+            document.getElementById("mins").innerHTML = ""
+            document.getElementById("secs").innerHTML = ""
+        }
+    }, 1000);
+</script>
+</body>
+</html>
