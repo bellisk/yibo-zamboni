@@ -28,9 +28,6 @@ const myfunc = setInterval(function () {
         clearInterval(myfunc);
         document.getElementById("answer").innerHTML = "YES!"
         document.getElementById("answer").style.color = "green"
-        document.getElementById("days").innerHTML = ""
-        document.getElementById("hours").innerHTML = ""
-        document.getElementById("mins").innerHTML = ""
-        document.getElementById("secs").innerHTML = ""
+        document.getElementById("explanation").innerHTML = "Yibo can drive the Zamboni as much as he wants!"
     }
 }, 1000);
