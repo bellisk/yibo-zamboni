@@ -34,7 +34,17 @@ body {
     min-height: 50%;
 }
 
-#question, #answer, h1 {
+.content div {
+    margin: auto;
+}
+
+h1 {
+    font-size: xxx-large;
+    font-family: Mechanismo, monospace;
+}
+
+h2 {
+    font-size: xx-large;
     font-family: Mechanismo, monospace;
 }
 
