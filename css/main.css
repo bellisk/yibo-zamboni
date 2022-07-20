@@ -1,6 +1,6 @@
 @font-face {
     font-family: Mechanismo;
-    src: url(mechanismo-font/MechanismoRegular-p7ywa.otf) format('opentype');
+    src: url(../fonts/MechanismoRegular-p7ywa.otf) format('opentype');
 }
 
 html {
@@ -10,7 +10,9 @@ html {
 
 body {
     display: flex;
-    background-image: url("images/21080670934_70d8c6ee9b_k.jpg");
+    background: black url("../images/image_2.jpg");
+    background-size: cover;
+    background-position-x: center;
     justify-content: center;
     margin: auto;
     align-content: center;
