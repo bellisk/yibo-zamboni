@@ -10,9 +10,10 @@ html {
 
 body {
     display: flex;
-    background: black url("../images/image_2.jpg");
+    background-color: black;
+    background-image: url("../images/image_2.jpg");
     background-size: cover;
-    background-position-x: center;
+    background-position: center;
     -webkit-transition: background-image 5s;
     justify-content: center;
     margin: auto;
@@ -33,10 +34,13 @@ body {
     justify-content: center;
     min-width: 50%;
     min-height: 50%;
+    text-align: center;
+    padding: 2em;
 }
 
 .content div {
     margin: auto;
+    font-family: "Noto Mono", monospace;
 }
 
 h1 {
@@ -53,7 +57,6 @@ h2 {
     color: darkred;
 }
 
-p {
-    display: inline;
-    margin-top: 0;
+.content .footer {
+    margin-top: 2em;
 }
