@@ -6,8 +6,7 @@ const zamboniTime = new luxon.DateTime.fromObject({
     minute: 0
 }, {zone: 'Asia/Shanghai'});
 
-// Run myfunc every second
-const myfunc = setInterval(function () {
+const calculateTime = function () {
     const now = new luxon.DateTime.local();
     const timeleft = zamboniTime.diff(now);
 
@@ -25,9 +24,13 @@ const myfunc = setInterval(function () {
 
     // Display the message when countdown is over
     if (timeleft <= 0) {
-        clearInterval(myfunc);
+        clearInterval(updateTime);
         document.getElementById("answer").innerHTML = "YES!"
         document.getElementById("answer").style.color = "green"
         document.getElementById("explanation").innerHTML = "Yibo can drive the Zamboni as much as he wants!"
     }
-}, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", calculateTime);
+
+const updateTime = setInterval(calculateTime, 1000);
