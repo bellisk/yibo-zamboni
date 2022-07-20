@@ -27,6 +27,7 @@ const myfunc = setInterval(function () {
     if (timeleft <= 0) {
         clearInterval(myfunc);
         document.getElementById("answer").innerHTML = "YES!"
+        document.getElementById("answer").style.color = "green"
         document.getElementById("days").innerHTML = ""
         document.getElementById("hours").innerHTML = ""
         document.getElementById("mins").innerHTML = ""

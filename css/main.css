@@ -49,6 +49,10 @@ h2 {
     font-family: Mechanismo, monospace;
 }
 
+#answer {
+    color: darkred;
+}
+
 p {
     display: inline;
     margin-top: 0;
