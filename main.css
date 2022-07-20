@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Mechanismo;
+    src: url(mechanismo-font/MechanismoRegular-p7ywa.otf) format('opentype');
+}
+
 html {
     height: 100%;
     margin: 0;
@@ -15,10 +20,20 @@ body {
 }
 
 .content {
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     background: white;
-    max-width: 50%;
+    border-radius: 30px;
+    opacity: 80%;
+    align-items: center;
+    justify-content: center;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+#question, #answer, h1 {
+    font-family: Mechanismo, monospace;
 }
 
 p {
